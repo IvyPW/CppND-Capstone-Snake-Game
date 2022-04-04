@@ -13,7 +13,6 @@ class Snake {
         grid_height(grid_height),
         head_x(grid_width / 2),
         head_y(grid_height / 2) {}
-  ~Snake();
   void Update();
 
   void GrowBody();
