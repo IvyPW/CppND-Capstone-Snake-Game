@@ -29,6 +29,28 @@ In this project, you can build your own C++ application or extend this Snake gam
 2. Make a build directory in the top level directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
 4. Run it: `./SnakeGame`.
+5. Select user level by typing 1, 2 or 3
+6. Game started
+
+## Extended features
+
+1. Snake will die if the head hit the boundary
+2. Move basic const window information from main to config.h, so it could be easier accessed by others
+3. Class Snake: Change variables to private, and add getters and setters for them.
+3. User can select difficult level from beginner, normal and hard
+
+## Rubrics:
+1. README - Fufill
+2. Compile and Test - Fufill
+3. Others
+    1. The project demonstrates an understanding of C++ functions and control structures. (game.cpp#L85-90,snake.cppL60-63)
+    2. The project accepts user input and processes the input. (main.cpp#L9-20)
+    3. The project uses OOP techniques.
+    4. Classes use appropriate access specifiers for class members. (snake.h#L42-44)
+    5. Class encapsulates behaviors. (snake.h#22-28)
+    6. The project makes use of references in function declarations. (game.h#L14)
+    7. The project uses destructors appropriately.
+
 
 
 ## CC Attribution-ShareAlike 4.0 International

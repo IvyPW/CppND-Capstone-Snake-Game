@@ -1,6 +1,7 @@
 #include "snake.h"
 #include <cmath>
 #include <iostream>
+#include "config.h"
 
 void Snake::Update() {
   SDL_Point prev_cell{
@@ -56,6 +57,11 @@ void Snake::UpdateBody(SDL_Point &current_head_cell, SDL_Point &prev_head_cell) 
   }
 
   // Check if the snake has died.
+  //if the snake reach the boundary: 
+  if (current_head_cell.x <= 0 || current_head_cell.y <= 0 || current_head_cell.x >= kScreenWidth - kGridWidth || current_head_cell.y >=kScreenHeight-kGridHeight){
+    alive = false;
+  }
+  //if the head goes into the body
   for (auto const &item : body) {
     if (current_head_cell.x == item.x && current_head_cell.y == item.y) {
       alive = false;
@@ -77,3 +83,26 @@ bool Snake::SnakeCell(int x, int y) {
   }
   return false;
 }
+
+float Snake::getSpeed() const{
+    return speed;
+  };
+void Snake::setSpeed(float s){
+  speed = s;
+};
+float Snake::getSize() const{
+  return size;
+};
+void Snake::setSize(float s){
+  size = s;
+};
+Snake::Direction Snake::getDirection() const{
+  return direction;
+};
+void Snake::setDirection(Snake::Direction d){
+    direction = d;
+  };
+
+std::vector<SDL_Point> Snake::getBody() const{
+    return body;
+  };
